@@ -63,8 +63,8 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   schedule
-   installation
    start
+   installation
    module
    DeveloperGuide
+   schedule

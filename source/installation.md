@@ -1,5 +1,9 @@
-# 安装
-Chern项目所依赖的软件包
+# Installation
+## Pre-requests
++ python
++ Docker:
+
+## Installation
 ```
-Python 3.1
+pip install Chern
 ```
