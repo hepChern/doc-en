@@ -7,16 +7,52 @@
 Chern documentation
 ====================
 The source code and the demo can be found in `github`__ .
-
-.. __: https://github.com/hepChern
 Welcome to contribute.
 
+.. __: https://github.com/hepChern
 The Chinese version of the document can be found `here`__ .
 
 .. __: http://chern.readthedocs.io/zh_CN/latest/
 
 Introduction
 ---------
+An article `A proposed solution for data analysis management in high energy physics`__ 
+will be uploaded to arxiv. In the article, we introduce the .
+Here, we would like to introduce the problem we face in the every-day data analysis work.
+And we would also like to define a best practice to do analysis together with Chern.
+
+Problems
+~~~~~~~~
++ Code would be changed once and once again.
++ Software version change with time.
++ Knowledge transfer.
++ Collaborative work.
++ Input data.
+
+Best practice
+~~~~~~~~
+It is possible to manage the whole analysis and . However, Human makes mistakes.
+It is quite hard to remember the .
+The Chern toolkit is designed to resolve the difficulty of analysis preservation.
+
+As 
++ Use docker bases provided officially.
++ A stable input data.
+
+To do this with Chern, we introduce a few concepts:
++ object: there are two types of object, one is called algorithm and another is called task.
+  The algorithm defines the code and the . The task contains the 
++ Impression: Impression is the core concept of Chern. a impression is a version of algorithm and task. For algorithm, the impression is
+  uniquely defined by its contents. However, for task, the impression is defined by itself 
+  but also the algorithm it use, and the its inputs. If the inputs/algorithm have a new impression,
+  the task should also have a new impression.
+
+The real stuff to do with chern:
++ make algorithms, make tasks, link them together, submit them to the background and chern will 
+  automatically run for you.
+
+We separate the .
+
 In the data analysis, the usual case is that we should process the data using different program one by one.
 However, with the progress of the experiment, we need to contienous update the models and the parameters.
 The update usually makes our program and our data more dirty and more messeous.
