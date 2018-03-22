@@ -6,6 +6,11 @@
 
 Chern documentation
 ====================
+The source code and the demo can be found in [github](https://github.com/hepChern). Welcome to contribute.
+The Chinese version of the document can be found [here](http://chern.readthedocs.io/zh_CN/latest/).
+
+Introduction
+---------
 In the data analysis, the usual case is that we should process the data using different program one by one.
 However, with the progress of the experiment, we need to contienous update the models and the parameters.
 The update usually makes our program and our data more dirty and more messeous.
