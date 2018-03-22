@@ -6,11 +6,13 @@
 
 Chern documentation
 ====================
-The source code and the demo can be found in `github`__.
+The source code and the demo can be found in `github`__ .
+
 .. __: https://github.com/hepChern
 Welcome to contribute.
 
-The Chinese version of the document can be found `here`.
+The Chinese version of the document can be found `here`__ .
+
 .. __: http://chern.readthedocs.io/zh_CN/latest/
 
 Introduction
