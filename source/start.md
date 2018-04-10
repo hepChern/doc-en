@@ -21,3 +21,4 @@ First, you need to make an empty directory, for example, named `Demo2`, and then
 chern init Demo2
 ```
 And following the instruction, and you will have an empty analysis project.
+Simply type `help\_me`, and you will
