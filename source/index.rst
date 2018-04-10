@@ -115,5 +115,5 @@ Contents:
    :maxdepth: 2
 
    installation
-   start
+   startup
    schedule
