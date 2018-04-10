@@ -1,6 +1,23 @@
-# 开始使用
-我们通过一个例子来介绍这个分析框架的主要工作原理。
-这个例子是要完成一个简单的小分析，对一个数据文件做事例筛选，然后使用不同的模型对数据
-进行拟合，最终求出参数的值。我们还会模拟更换参数和输入数据的变化。
-在软件的example目录下有一个tuple.root文件，这将作为我们的data文件。
-我们要做的事情是对这个data文件进行事例筛选，然后更换不同的模型进行拟合。
+# Getting start
+Let's start with a "hello-world" example.
+The example is on .
+
+First, you should start the Chern daemon:
+```
+chern daemon start
+```
+
+Next, you are can get the analysis and .
+```
+git clone 
+chern use 
+```
+Just follow the instruction of the analysis,
+you will get the result.
+
+If you have finished all the steps, I will tell you how to construct such an analysis.
+First, you need to make an empty directory, for example, named `Demo2`, and then, use:
+```
+chern init Demo2
+```
+And following the instruction, and you will have an empty analysis project.
