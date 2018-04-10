@@ -28,6 +28,10 @@ Problems
 + Knowledge transfer.
 + Collaborative work.
 + Input data.
++ Continuous change of directory structure.
+  It is never possible to contruct the whole analysis perfectly 
+  in the first time. The architecture of the analysis will change
+  by time.
 
 Best practice
 ~~~~~~~~
