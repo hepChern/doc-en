@@ -116,4 +116,5 @@ Contents:
 
    installation
    startup
+   FAQ
    schedule

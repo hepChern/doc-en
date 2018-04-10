@@ -7,10 +7,10 @@ First, you should start the Chern daemon:
 chern daemon start
 ```
 
-Next, you are can get the analysis and .
+Next, you are can get the simplest demo analysis https://github.com/hepChern/Demo-Basic01.git.
 ```
-git clone 
-chern use 
+git clone https://github.com/hepChern/Demo-Basic01.git
+chern use Demo-Basic01
 ```
 Just follow the instruction of the analysis,
 you will get the result.
