@@ -116,6 +116,4 @@ Contents:
 
    installation
    start
-   module
-   DeveloperGuide
    schedule
