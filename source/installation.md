@@ -10,6 +10,6 @@ The Chern toolkit require a few packages to be installed in advance.
 The chern release is on PyPI: https://pypi.python.org/pypi/Chern/ .
 It is convenient to install it using pip.
 ```
-pip install Chern
+pip3 install Chern
 ```
 To upgrade the software, you should remove the ~/.Chern/profile.
