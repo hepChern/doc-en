@@ -16,12 +16,19 @@ The Chinese version of the document can be found `here`__ .
 
 Introduction
 ---------
+Chern is designed to solve the problem of analysis management.
 An article `A proposed solution for data analysis management in high energy physics`__ 
-will be uploaded to arxiv. In the article, we introduce the .
-Here, we would like to introduce the problem we face in the every-day data analysis work.
-And we would also like to define a best practice to do analysis together with Chern.
+will be uploaded to arxiv. In the article, I introduce the designation of the Chern, 
+while here I would like to face to the users.
 
-.. __: http://chern.readthedocs.io/zh_CN/latest/
+The introduction section is organized as following.
+First, I would like to introduce the problem we face in the every-day data analysis work,
+and to address why the management of analysis is indispensable.
+Then I would like to introduce the user cases of Chern.
+And Finally, I would also like to define a best practice to do analysis together with Chern,
+and picture the daily life of analyzers in the (near?) future.
+
+.. __: not_available_yet
 
 Problems
 ~~~~~~~~
