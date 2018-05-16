@@ -21,6 +21,8 @@ will be uploaded to arxiv. In the article, we introduce the .
 Here, we would like to introduce the problem we face in the every-day data analysis work.
 And we would also like to define a best practice to do analysis together with Chern.
 
+.. __: http://chern.readthedocs.io/zh_CN/latest/
+
 Problems
 ~~~~~~~~
 + Code would be changed once and once again.
@@ -122,3 +124,9 @@ Contents:
    API
    FAQ
    schedule
+
+.. automodule:: Chern
+   :members:
+
+.. automodule:: Chern.kernel.VObject
+   :members:
