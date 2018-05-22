@@ -2,9 +2,10 @@
 Let's start with a "hello-world" example.
 The example is on .
 
-First, you should start the Chern daemon:
+First, you should start your local Chern machine:
 ```
-chern daemon start
+chern_machine server start
+chern_machine runner start
 ```
 
 Next, you are can get the simplest demo analysis https://github.com/hepChern/Demo-Basic01.git.
