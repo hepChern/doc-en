@@ -1,6 +1,5 @@
 # Getting start
 Let's start with a "hello-world" example.
-The example is on .
 
 First, you should start your local Chern machine:
 ```
@@ -22,7 +21,7 @@ First, you need to make an empty directory, for example, named `Demo2`, and then
 chern init Demo2
 ```
 And following the instruction, and you will have an empty analysis project.
-Simply type `help_me`, and you will get some help infomation.
+Simply type `helpme`, and you will get some help infomation.
 We would like to create an algorithm, type:
 ```
 mk_algorithm algorithm

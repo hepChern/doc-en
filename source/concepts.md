@@ -12,6 +12,7 @@ A Chern repository is a folder containing all the directory, task and algorithm.
 The task and algorithm can not be run.
 
 ## Chern machine
+Chern machine is where your impression is run and organized.
 
 ## Frontend
 
