@@ -47,12 +47,12 @@ Problems in Analysis Preservation and Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In everyday data analysis work, especially in high energy physics, managing an analysis project is not merely about writing code that runs once and produces results. The lifecycle of an analysis is long, iterative, and often collaborative. Below we outline the key challenges that motivate the need for a dedicated analysis management toolkit like Chern:
 
-+ Frequent Code Modifications
+1. Frequent Code Modifications
 
 Analysis code is rarely static. It evolves continually in response to new findings, changes in data quality, requests from reviewers, or improvements in methodology. Over time, this leads to multiple versions of scripts and configurations, often without a systematic way to track what changed and why. This makes it difficult to reproduce past results or understand the rationale behind certain choices.
 
 
-+ Software and Environment Version Drift
+2. Software and Environment Version Drift
 
 The software stack used in an analysis—including compilers, analysis frameworks, and external libraries—changes over time. A codebase that worked last year may no longer run due to deprecated APIs or missing dependencies. Without strict version control or encapsulation of the software environment, analysis reproducibility becomes fragile.
 
@@ -82,9 +82,9 @@ No analysis is perfect from the start. The directory structure, naming conventio
 ..   in the first time. The architecture of the analysis will change
 ..   by time.
 
-User case
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The 
+.. User case
+.. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. The 
 
 Basic concepts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
