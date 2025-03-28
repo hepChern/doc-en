@@ -51,6 +51,7 @@ In everyday data analysis work, especially in high energy physics, managing an a
 
 Analysis code is rarely static. It evolves continually in response to new findings, changes in data quality, requests from reviewers, or improvements in methodology. Over time, this leads to multiple versions of scripts and configurations, often without a systematic way to track what changed and why. This makes it difficult to reproduce past results or understand the rationale behind certain choices.
 
+
 + Software and Environment Version Drift
 
 The software stack used in an analysis—including compilers, analysis frameworks, and external libraries—changes over time. A codebase that worked last year may no longer run due to deprecated APIs or missing dependencies. Without strict version control or encapsulation of the software environment, analysis reproducibility becomes fragile.
