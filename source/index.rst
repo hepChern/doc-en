@@ -16,32 +16,70 @@ The Chinese version of the document can be found `here`__ .
 
 Introduction
 ---------------------------
-Chern is designed to solve the problem of analysis management.
-An article `A proposed solution for data analysis management in high energy physics`__ 
-will be uploaded to arxiv. In the article, I introduce the designation of the Chern, 
-while here I would like to face to the users.
+Chern is developed to address a fundamental challenge in high energy physics: managing the complexity of data analysis.
+While the article `A proposed solution for data analysis management in high energy physics` (uploaded to arXiv) 
+formally presents the design and implementation of Chern, here I would like to speak directly to users.
 
-The introduction section is organized as following.
-First, I would like to introduce the problem we face in the every-day data analysis work,
-and to address why the management of analysis is indispensable.
-Then I would like to introduce the user cases of Chern.
-I will also give a very brief introduction on some concepts of Chern, whose details can be found in the following chapters.
-And Finally, I would also like to define a best practice to do analysis together with Chern,
-and picture the daily life of analyzers in the (near?) future.
+This introduction is structured as follows.
+I will begin by outlining the common challenges we face in daily data analysis workflows,
+and why effective analysis management is not just helpful, but essential.
+Next, I will present several typical use cases for Chern to illustrate its practical benefits.
+I will also briefly introduce a few key concepts of Chern—more detailed explanations are provided in the following chapters.
+Finally, I will outline a recommended best practice for conducting analysis with Chern
+and offer a vision of what the daily life of analysts could look like in the future with such a tool in hand.
+
+.. Chern is designed to solve the problem of analysis management.
+.. An article `A proposed solution for data analysis management in high energy physics`__ 
+.. will be uploaded to arxiv. In the article, I introduce the designation of the Chern, 
+.. while here I would like to face to the users.
+
+.. The introduction section is organized as following.
+.. First, I would like to introduce the problem we face in the every-day data analysis work,
+.. and to address why the management of analysis is indispensable.
+.. Then I would like to introduce the user cases of Chern.
+.. I will also give a very brief introduction on some concepts of Chern, whose details can be found in the following chapters.
+.. And Finally, I would also like to define a best practice to do analysis together with Chern,
+.. and picture the daily life of analyzers in the (near?) future.
 
 .. __: not_available_yet
 
-Problems
+Problems in Analysis Preservation and Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-+ Code would be changed once and once again.
-+ Software version change with time.
-+ Knowledge transfer.
-+ Collaborative work.
-+ Input data.
-+ Continuous change of directory structure.
-  It is never possible to contruct the whole analysis perfectly 
-  in the first time. The architecture of the analysis will change
-  by time.
+In everyday data analysis work, especially in high energy physics, managing an analysis project is not merely about writing code that runs once and produces results. The lifecycle of an analysis is long, iterative, and often collaborative. Below we outline the key challenges that motivate the need for a dedicated analysis management toolkit like Chern:
+
++ Frequent Code Modifications
+
+Analysis code is rarely static. It evolves continually in response to new findings, changes in data quality, requests from reviewers, or improvements in methodology. Over time, this leads to multiple versions of scripts and configurations, often without a systematic way to track what changed and why. This makes it difficult to reproduce past results or understand the rationale behind certain choices.
+
++ Software and Environment Version Drift
+
+The software stack used in an analysis—including compilers, analysis frameworks, and external libraries—changes over time. A codebase that worked last year may no longer run due to deprecated APIs or missing dependencies. Without strict version control or encapsulation of the software environment, analysis reproducibility becomes fragile.
+
+3. Knowledge Transfer
+
+Analyses often span months or years, and team members come and go. Critical knowledge—including data selection criteria, rationale for parameter choices, or interpretation of intermediate results—is often undocumented or scattered across emails, slides, and informal conversations. As a result, new collaborators or future revisits of the analysis face a steep learning curve.
+
+4. Collaborative Work
+
+Modern high energy physics experiments are conducted by large collaborations. Multiple people may contribute to the same analysis pipeline, often asynchronously and from different locations. Without clear roles, modular structures, and well-managed workflows, collaboration can lead to conflicts, redundant work, and inconsistent results.
+
+5. Management of Input Data
+
+Analysis depends on multiple input datasets: raw data, simulation, calibrations, and derived formats. These inputs are versioned and sometimes regenerated, and managing which input corresponds to which result becomes a tedious and error-prone process, especially when rerunning older analyses.
+
+6. Evolving Directory Structure and Analysis Architecture
+
+No analysis is perfect from the start. The directory structure, naming conventions, and logical decomposition of the analysis inevitably evolve over time as the work progresses. This creates inconsistencies and clutter if changes are not carefully managed, and often leads to broken scripts, duplicated code, and confusion.
+
+.. + Code would be changed once and once again.
+.. + Software version change with time.
+.. + Knowledge transfer.
+.. + Collaborative work.
+.. + Input data.
+.. + Continuous change of directory structure.
+..   It is never possible to contruct the whole analysis perfectly 
+..   in the first time. The architecture of the analysis will change
+..   by time.
 
 User case
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
