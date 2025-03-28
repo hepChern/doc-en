@@ -44,7 +44,7 @@ and offer a vision of what the daily life of analysts could look like in the fut
 .. __: not_available_yet
 
 Problems in Analysis Preservation and Management
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 In everyday data analysis work, especially in high energy physics, managing an analysis project is not merely about writing code that runs once and produces results. The lifecycle of an analysis is long, iterative, and often collaborative. Below we outline the key challenges that motivate the need for a dedicated analysis management toolkit like Chern:
 
 1. Frequent Code Modifications
@@ -86,31 +86,64 @@ No analysis is perfect from the start. The directory structure, naming conventio
 .. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. The 
 
-Basic concepts
+Chern System Overview
+---------------
+
+The **Chern system** introduces a novel paradigm for managing and executing physics analyses, aiming to provide a structured, reproducible, and scalable framework. It reimagines the traditional analysis workflow by clearly separating responsibilities and enforcing a clean abstraction between analysis definition and data production. In the following sections, we outline this paradigm and discuss its components and implications in detail.
+
+Core Components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* **Chern repository**: A folder to contain the whole analysis.
-* **Task**: Unrigorously, a folder in repository, which can appoint parameters and inputs. Tasks are linked up to form the workflow of analysis.
-* **Algorithm**: Unriggorously, a folder in repository, which is a template for 'task', containing the code and envrionment definition.
-* **Impression**: A version of task or algorithm. It is something similar to 'commit' if you are familiar with 'git'. 
-  Impression can be run. It contains the infomation as the corresponding task before running, and after running it contains also the output data.
 
-Best practice and foresight
+The Chern system consists of two tightly integrated components:
+
+- **Analysis Repository**
+  The analysis repository contains all the code, configuration parameters, and metadata required to define an entire physics analysis. It serves as the canonical source of truth for the logic of the analysis, ensuring that every component of the workflow—from data selection to final plots—is versioned, documented, and reproducible. This repository is designed to be lightweight, enabling efficient tracking of changes over time using standard version control tools like Git.
+
+- **Production Factory**
+  The production factory handles the operational aspects of the analysis. It manages the collection and organization of input datasets, oversees the execution of workflows, and stores produced outputs. This component is responsible for ensuring the correctness, integrity, and accessibility of intermediate and final results, often across heterogeneous computing environments. It also facilitates scalable production by coordinating batch processing and caching results to minimize redundant computations.
+
+Together, these components provide a modular and transparent framework that promotes reproducibility, collaboration, and sustainability in complex physics analyses.
+
+Repository Structure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In the morning, the analyzer Alice go to the office. She starts her personal computer and begin to do the analysis work.
-She simply type 'Chern' and goes to a directory of her recent analysis. She type 'status' and see that the job she
-submitted yesterday failed. She relaized that it is because of a typo in the analysis code.
-She modifiy the code and type 'status', the 'algorithm' and the 'task' using it become 'new' status. She cd to a test 'task' and type 'submit'.
-Typing the command 'submit' in a 'task' of status 'new' will automatically create a new 'impression' for the 'task' and the 'impression' is submitted
-to the local running machine, ie., the backend of the personal computer.
-After a while, the status become 'done', which means the impression runs successfully in the backend. Then she go to the production 'task' and 
-type 'submit -u 9bd33abb'. And then, the 'impression' for production 'task' is created and submitted to .
 
-Two years after, a colleague of Alice, Bob would like to reproduce the result of Alice. He simply clone the repository of Alice and type 'submit'.
-All the result is reproduced.
+The analysis repository organizes content around two fundamental types of entities: **objects** and **impressions**.
 
-From the above story, we don not see the step to preserve analysis. The analysis preservation is automatically and in time when doing analysis.
+- **Objects**
+  Objects are the atomic units of analysis logic. Each object encapsulates a minimal, self-contained piece of code or configuration. Objects may represent data selection criteria, transformation steps, plotting routines, or any other operation in the analysis pipeline. They are organized hierarchically according to a logical, human-readable structure that mirrors the analysis workflow. Importantly, objects are strictly modular: one object cannot contain another object, enforcing a clean and understandable dependency graph.
 
-Contents:
+- **Impressions**
+  Impressions are immutable snapshots of objects. Each impression captures the complete state of an object at a given point in time, including the values of parameters and the structure of dependencies on upstream objects. Impressions are automatically generated by the system and serve as the fundamental units for execution and caching. Because they record both content and context, impressions make it possible to precisely reconstruct any step of the analysis, ensuring full reproducibility of all results. Their immutable nature also guarantees consistency across repeated runs and across different users or machines.
+
+.. Implications and Benefits
+.. -------------------------
+.. 
+.. The Chern system enables a
+.. 
+.. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. * **Chern repository**: A folder to contain the whole analysis.
+.. * **Task**: Unrigorously, a folder in repository, which can appoint parameters and inputs. Tasks are linked up to form the workflow of analysis.
+.. * **Algorithm**: Unriggorously, a folder in repository, which is a template for 'task', containing the code and envrionment definition.
+.. * **Impression**: A version of task or algorithm. It is something similar to 'commit' if you are familiar with 'git'. 
+..   Impression can be run. It contains the infomation as the corresponding task before running, and after running it contains also the output data.
+.. 
+.. Best practice and foresight
+.. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. In the morning, the analyzer Alice go to the office. She starts her personal computer and begin to do the analysis work.
+.. She simply type 'Chern' and goes to a directory of her recent analysis. She type 'status' and see that the job she
+.. submitted yesterday failed. She relaized that it is because of a typo in the analysis code.
+.. She modifiy the code and type 'status', the 'algorithm' and the 'task' using it become 'new' status. She cd to a test 'task' and type 'submit'.
+.. Typing the command 'submit' in a 'task' of status 'new' will automatically create a new 'impression' for the 'task' and the 'impression' is submitted
+.. to the local running machine, ie., the backend of the personal computer.
+.. After a while, the status become 'done', which means the impression runs successfully in the backend. Then she go to the production 'task' and 
+.. type 'submit -u 9bd33abb'. And then, the 'impression' for production 'task' is created and submitted to .
+.. 
+.. Two years after, a colleague of Alice, Bob would like to reproduce the result of Alice. He simply clone the repository of Alice and type 'submit'.
+.. All the result is reproduced.
+.. 
+.. From the above story, we don not see the step to preserve analysis. The analysis preservation is automatically and in time when doing analysis.
+.. 
+.. Contents:
 
 .. toctree::
    :maxdepth: 2
